@@ -18,3 +18,5 @@ public class calculadoratarifa {
         return metodo.calcularcosto(distancia);
     }
 }
+
+//forzano
