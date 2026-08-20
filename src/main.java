@@ -1,9 +1,11 @@
+//el control
+
 public class main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SistemaLogistica sistema = new SistemaLogistica();
         System.out.println("inciciar turno");
 
-        Pedido pedido1 =new Pedido (101,"polleria el gordo");
+        Pedido pedido1 = new Pedido(101, "polleria el gordo");
         Pedido pedido2 = new Pedido(102, "chifa el dragon");
         Pedido pedido3 = new Pedido(103, "burger king");
 
@@ -16,10 +18,25 @@ public class main {
 
         System.out.println("ACTUALIXADOP  EN TIEMPO REAL");
 
-        sistema.actualizarEstadoPedido(101,"en camino");
-        sistema.actualizarEstadoPedido(102,"entregado");
-        sistema.actualizarEstadoPedido(103,"en camino");
+        sistema.actualizarEstadoPedido(101, "en camino");
+        sistema.actualizarEstadoPedido(102, "entregado");
+        sistema.actualizarEstadoPedido(103, "en camino");
         System.out.println("estado final");
         sistema.mostrarPedidosPendientes();
+
+        System.out.println("cancelado un pedido");
+        sistema.cancerlarPedido(103);
+        System.out.println("estado despues de la cancelacion ");
+        sistema.mostrarPedidosPendientes();
+
+        System.out.println("generar respaldo del cierre turno");
+        Pedido[] rutaRespaldo = sistema.generarRespaldoRuta();
+        System.out.println("estructura clonada");
+        for (int i = 0; i < rutaRespaldo.length; i++) {
+            if (rutaRespaldo[i] != null) {
+                System.out.println("respaldo" + rutaRespaldo[i].toString());
+            }
+        }
+        System.out.println("f");
     }
 }
