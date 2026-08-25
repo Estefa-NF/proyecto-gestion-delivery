@@ -38,5 +38,13 @@ public class main {
             }
         }
         System.out.println("f");
+
+        System.out.println("alerta ingreso pedido");
+        Pedido pedidoUrgente = new Pedido(999, "kfc");
+        sistema.insertarPedidoExpress(0,pedidoUrgente);
+        System.out.println("rutear con pedido");
+        sistema.mostrarPedidosPendientes();
+
     }
+
 }

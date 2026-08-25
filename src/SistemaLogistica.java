@@ -78,6 +78,26 @@ public class SistemaLogistica {
         return listaPedidos.clone();
         }
 
+        public void insertarPedidoExpress(int indiceDeseaso, Pedido pedidoVIP){
+        if (indiceDeseaso <0  || indiceDeseaso > cantidadActual){
+        System.out.println("Error" + indiceDeseaso + "no es valida");
+        return;
+        }
+
+        if (cantidadActual >= listaPedidos.length) {
+            System.out.println("error del sistema de reparto");
+            return;
+        }
+        for (int i= cantidadActual; i> indiceDeseaso; i--) {
+            listaPedidos[i] = listaPedidos[i-1];
+        }
+        listaPedidos[indiceDeseaso] = pedidoVIP;
+        cantidadActual++;
+        System.out.println("pedido rapido" + pedidoVIP.toString() + " imsert pedido" + indiceDeseaso);
+
+
+    }
+
 
     }
 
