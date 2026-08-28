@@ -45,6 +45,24 @@ public class main {
         System.out.println("rutear con pedido");
         sistema.mostrarPedidosPendientes();
 
+        //fusiom para no equivarcme
+        System.out.println("fusionando");
+        Pedido[] rutaRepartidorA ={
+                new Pedido(201,"PIZZA"),
+                new Pedido (202,"hamborgueas")
+        };
+        Pedido[] rutaRepartidorB = {
+                new Pedido(301 ,"PAN"),
+                new Pedido(302 ,"CHICHARRON")
+        };
+        Pedido[] rutaMaestra = sistema.fusionarRutas(rutaRepartidorA,rutaRepartidorB);
+        System.out.println("ruta fusion");
+        for (int i=1; i<rutaMaestra.length; i++){
+            if (rutaMaestra[i] !=null) {
+                System.out.println(rutaMaestra[i].toString());
+            }
+        }
+
     }
 
 }

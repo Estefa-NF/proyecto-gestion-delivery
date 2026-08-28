@@ -97,6 +97,15 @@ public class SistemaLogistica {
 
 
     }
+    public Pedido [] fusionarRutas(Pedido[] ruta1, Pedido[] ruta2){
+        int tamañoTotal = ruta1.length + ruta2.length;
+        Pedido [] rutaFusionada = new Pedido[tamañoTotal];
+        System.arraycopy(ruta1,0,rutaFusionada,0,ruta1.length);
+        System.arraycopy(ruta2,0,rutaFusionada,ruta1.length,ruta2.length);
+        System.out.println("se fusiono" + ruta1.length + "y" + ruta2.length +"pedido en una sola ruta");
+        return rutaFusionada;
+
+    }
 
 
     }
