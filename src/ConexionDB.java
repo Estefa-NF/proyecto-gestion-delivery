@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
     public class ConexionDB {
-        private static final String URL = "CONEXION";
+        private static final String URL = "jdbc:sqlite:delivery.db";
 
         public static Connection conectar() {
             Connection conexion = null;
