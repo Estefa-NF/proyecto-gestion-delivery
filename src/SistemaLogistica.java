@@ -97,16 +97,36 @@ public class SistemaLogistica {
 
 
     }
-    public Pedido [] fusionarRutas(Pedido[] ruta1, Pedido[] ruta2){
+
+    public Pedido[] fusionarRutas(Pedido[] ruta1, Pedido[] ruta2) {
         int tamañoTotal = ruta1.length + ruta2.length;
-        Pedido [] rutaFusionada = new Pedido[tamañoTotal];
-        System.arraycopy(ruta1,0,rutaFusionada,0,ruta1.length);
-        System.arraycopy(ruta2,0,rutaFusionada,ruta1.length,ruta2.length);
-        System.out.println("se fusiono" + ruta1.length + "y" + ruta2.length +"pedido en una sola ruta");
+        Pedido[] rutaFusionada = new Pedido[tamañoTotal];
+        System.arraycopy(ruta1, 0, rutaFusionada, 0, ruta1.length);
+        System.arraycopy(ruta2, 0, rutaFusionada, ruta1.length, ruta2.length);
+        System.out.println("se fusiono" + ruta1.length + "y" + ruta2.length + "pedido en una sola ruta");
         return rutaFusionada;
 
     }
-
-
+    public boolean compararRutas(Pedido[] ruta1, Pedido[] ruta2 ){
+        if (ruta1.length != ruta2.length) {
+            System.out.println("comparacion falsa diferente tamaño");
+            return false;
+        }
+        for (int i=0; i< ruta1.length; i++){
+            if (ruta1[i] != null && ruta2[i] !=null){
+                if (ruta1[i].getIdPedido() != ruta2[i].getIdPedido()){
+                    System.out.println("comparacion verdadero ambas rutas son verdaderas ");
+                    return false;
+                }
+            }
+        }
+        System.out.println("comparacion verdadero");
+        return true;
     }
+
+    public Pedido[] clonarRutaEspecial(Pedido[] rutaOriginal) {
+        System.out.println("clonacion generando una nueva instancia");
+        return rutaOriginal.clone();
+    }
+}
 

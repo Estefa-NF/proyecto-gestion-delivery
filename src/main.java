@@ -41,28 +41,46 @@ public class main {
 
         System.out.println("alerta ingreso pedido");
         Pedido pedidoUrgente = new Pedido(999, "kfc");
-        sistema.insertarPedidoExpress(0,pedidoUrgente);
+        sistema.insertarPedidoExpress(0, pedidoUrgente);
         System.out.println("rutear con pedido");
         sistema.mostrarPedidosPendientes();
 
         //fusiom para no equivarcme
         System.out.println("fusionando");
-        Pedido[] rutaRepartidorA ={
-                new Pedido(201,"PIZZA"),
-                new Pedido (202,"hamborgueas")
+        Pedido[] rutaRepartidorA = {
+                new Pedido(201, "PIZZA"),
+                new Pedido(202, "hamborgueas")
         };
         Pedido[] rutaRepartidorB = {
-                new Pedido(301 ,"PAN"),
-                new Pedido(302 ,"CHICHARRON")
+                new Pedido(301, "PAN"),
+                new Pedido(302, "CHICHARRON")
         };
-        Pedido[] rutaMaestra = sistema.fusionarRutas(rutaRepartidorA,rutaRepartidorB);
+        Pedido[] rutaMaestra = sistema.fusionarRutas(rutaRepartidorA, rutaRepartidorB);
         System.out.println("ruta fusion");
-        for (int i=1; i<rutaMaestra.length; i++){
-            if (rutaMaestra[i] !=null) {
+        for (int i = 1; i < rutaMaestra.length; i++) {
+            if (rutaMaestra[i] != null) {
                 System.out.println(rutaMaestra[i].toString());
             }
         }
 
-    }
+        System.out.println("compaacion y clonacion ");
+        Pedido[] rutaOriginal = {
+                new Pedido(401, "bombos"),
+                new Pedido(402, "papa jonsh")
+        };
+        Pedido[] rutaClonada = sistema.clonarRutaEspecial(rutaOriginal);
+        System.out.println("comparando ruta original");
+        sistema.compararRutas(rutaOriginal, rutaClonada);
 
+        Pedido[] rutaDiferente = {
+                new Pedido(999, "restaurante"),
+                new Pedido(123, "papajons")
+
+        };
+
+        System.out.println("comparacion ruta original con ruda diferente ");
+        sistema.compararRutas(rutaOriginal, rutaDiferente);
+
+
+    }
 }
