@@ -107,6 +107,7 @@ public class SistemaLogistica {
         return rutaFusionada;
 
     }
+
     public boolean compararRutas(Pedido[] ruta1, Pedido[] ruta2 ){
         if (ruta1.length != ruta2.length) {
             System.out.println("comparacion falsa diferente tamaño");
@@ -127,6 +128,37 @@ public class SistemaLogistica {
     public Pedido[] clonarRutaEspecial(Pedido[] rutaOriginal) {
         System.out.println("clonacion generando una nueva instancia");
         return rutaOriginal.clone();
+    }
+
+    public void mostrarMapaDistancias() {
+        System.out.println(" MAPA  MATRIZ SIMÉTRICA");
+
+        int n = 3;
+        int[][] distancias = new int[n][n];
+
+        distancias[0][0] = 0;
+        distancias[1][1] = 0;
+        distancias[2][2] = 0;
+
+        distancias[0][1] = 4;
+        distancias[1][0] = 4;
+
+        distancias[0][2] = 6;
+        distancias[2][0] = 6;
+
+        distancias[1][2] = 2;
+        distancias[2][1] = 2;
+
+        String[] zonas = {"Centro", "Lambramani", "Porongoche"};
+
+        System.out.println("Centro Lambram.Porongoche");
+        for (int fila = 0; fila < n; fila++) {
+            System.out.print(zonas[fila] + " finas");
+            for (int columna = 0; columna < n; columna++) {
+                System.out.print(distancias[fila][columna] + "km");
+            }
+            System.out.println();
+        }
     }
 }
 

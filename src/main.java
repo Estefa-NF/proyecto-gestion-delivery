@@ -81,6 +81,9 @@ public class main {
         System.out.println("comparacion ruta original con ruda diferente ");
         sistema.compararRutas(rutaOriginal, rutaDiferente);
 
+        sistema.mostrarMapaDistancias();
+
 
     }
+
 }
