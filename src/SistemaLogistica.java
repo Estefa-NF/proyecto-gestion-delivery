@@ -2,6 +2,8 @@
 
 // el cerebro
 
+import dinamico.Pedido;
+
 public class SistemaLogistica {
 
     private Pedido[] listaPedidos;
