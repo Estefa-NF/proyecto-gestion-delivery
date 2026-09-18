@@ -15,7 +15,7 @@ public class Main {
         System.out.println("BIENVENIDO AL SISTEMA DE DELIVERY");
 
         while (opcion != 6) {
-            System.out.println("\n--- MENÚ PRINCIPAL ---");
+            System.out.println(" MENÚ PRINCIPAL ");
             System.out.println("1. Ver pedidos pendientes ");
             System.out.println("2. Ingresar pedido express ");
             System.out.println("3. Actualizar estado de un pedido ");
@@ -42,7 +42,7 @@ public class Main {
                     System.out.print("ID del pedido a actualizar: ");
                     int idAct = teclado.nextInt();
                     teclado.nextLine();
-                    System.out.print("Nuevo estado (ej. 'En Camino'): ");
+                    System.out.print("Nuevo estado En Camino'): ");
                     String estado = teclado.nextLine();
                     sistema.actualizarEstadoPedido(idAct, estado);
                     break;
@@ -55,12 +55,12 @@ public class Main {
                     sistema.mostrarMapaDistancias();
                     break;
                 case 6:
-                    System.out.println("Generando respaldo (Copia)...");
+                    System.out.println("Generando respaldo");
                     sistema.generarRespaldoRuta();
-                    System.out.println("Cerrando sistema. ¡Buen descanso!");
+                    System.out.println("Cerrando sistema. Buen descanso");
                     break;
                 default:
-                    System.out.println("❌ Opción inválida. Intenta de nuevo.");
+                    System.out.println("Opción inválida. Intenta de nuevo.");
             }
         }
         teclado.close();

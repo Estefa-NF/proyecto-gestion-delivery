@@ -41,7 +41,7 @@ public class RutaReparto {
 
                     anterior.setSiguiente(actual.getSiguiente());
                 }
-                System.out.println("❌ CANCELADO: Pedido #" + idBuscado + " eliminado de la ruta.");
+                System.out.println("CANCELADO: Pedido #" + idBuscado + " eliminado de la ruta.");
                 return;
             }
             anterior = actual;
@@ -50,10 +50,10 @@ public class RutaReparto {
         System.out.println("ERROR: El pedido #" + idBuscado + " no se encontró en la ruta.");
     }
     public void mostrarRuta() {
-        System.out.print(" MAPA DE RUTA: [Head] -> ");
+        System.out.print(" MAPA DE RUTA:");
         NodoPedido actual = head;
         while (actual != null) {
-            System.out.print("(" + actual.getPedidoActual().getNombreRestaurante() + ") -> ");
+            System.out.print("(" + actual.getPedidoActual().getNombreRestaurante() + ")");
             actual = actual.getSiguiente();
         }
 

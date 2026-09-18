@@ -12,11 +12,11 @@ public class MochilaReparto {
         NodoPedido nuevaCaja = new NodoPedido(nuevoPedido);
         nuevaCaja.setSiguiente(cima);
         cima = nuevaCaja;
-        System.out.println(" PUSH: dinamico.Pedido " + nuevoPedido.getIdPedido() + " guardado arriba en la mochila.");
+        System.out.println(" dinamico.Pedido " + nuevoPedido.getIdPedido() + " guardado arriba en la mochila.");
     }
     public Pedido pop() {
         if (isEmpty()) {
-            System.out.println("❌ ERROR: No hay nada que sacar, la mochila está vacía.");
+            System.out.println("ERROR: No hay nada que sacar, la mochila está vacía.");
             return null;
         }
 
@@ -28,9 +28,9 @@ public class MochilaReparto {
     }
     public void top() {
         if (isEmpty()) {
-            System.out.println("TOP: La mochila está vacía.");
+            System.out.println("La mochila está vacía.");
         } else {
-            System.out.println("TOP: El pedido que está más arriba es el " + cima.getPedidoActual().getIdPedido());
+            System.out.println("El pedido que está más arriba es el " + cima.getPedidoActual().getIdPedido());
         }
     }
 }

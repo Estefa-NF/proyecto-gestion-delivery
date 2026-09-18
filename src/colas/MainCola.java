@@ -19,7 +19,7 @@ public class MainCola {
         colaRestaurante.enqueue(p2);
         colaRestaurante.enqueue(p3);
 
-        System.out.println(" ESTADO DE LA COCINA ");
+        System.out.println("ESTADO DE LA COCINA ");
 
         colaRestaurante.front();
 
